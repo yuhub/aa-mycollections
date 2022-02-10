@@ -1,0 +1,16 @@
+namespace: mycollections
+name: threetierapp
+version: 1.0.0
+readme: README.md
+authors:
+- Mitesh The Mouse <mitsharm@redhat.com>
+description: Configures three tier application
+license:
+- GPL-2.0-or-later
+tags:
+  - three_tier_app
+dependencies: {}
+repository: http://bastion.example.com:5050/mycollections
+documentation: http://bastion.example.com:5050/mycollections/README.md
+homepage: http://bastion.example.com
+issues: http://example.com/issue/tracker
