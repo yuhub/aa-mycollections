@@ -2,7 +2,7 @@
 - name: Install apache server
   yum:
     name: "{{ __package }}"
-    state: latest
+    state: installed
   loop: "{{ apache_packages }}"
   loop_control:
     loop_var: __package

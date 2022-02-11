@@ -2,7 +2,7 @@
 - name: Install mysql
   yum:
     name: "{{ __package }}"
-    state: latest
+    state: installed
   loop: "{{ mysql_packages }}"
   loop_control:
     loop_var: __package

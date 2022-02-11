@@ -2,7 +2,7 @@
 - name: Install Firewalld
   dnf:
     name: firewalld
-    state: latest
+    state: installed
 
 - name: Start firewalld
   service:
