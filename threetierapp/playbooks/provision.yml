@@ -11,7 +11,6 @@
 
     - name: Create Instance
       openstack.cloud.server:
-        cloud: "{{ guid }}-project"
         name: "{{ item.name }}"
         image: "{{ item.image }}"
         key_name: "{{ item.keypair }}"
