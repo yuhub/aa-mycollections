@@ -1,5 +1,5 @@
 ---
-- name: Create OpenStack Instances....
+- name: Create OpenStack Instances
   hosts: localhost
   connection: local
   gather_facts: false
@@ -9,7 +9,7 @@
     - name: Include Instance variables
       include_vars: instances_vars.yml
 
-    - name: Create Instance
+    - name: Create Instance....
       openstack.cloud.server:
         cloud: "{{ guid }}-project"
         name: "{{ instance.name }}"
