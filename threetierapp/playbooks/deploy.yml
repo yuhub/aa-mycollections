@@ -1,8 +1,6 @@
 ---
 - name: Deploy database
   hosts: database_servers
-  inventoryes:
-    - inventory
   roles:
     - name: Install and configure firewall
       role: aa-mycollections.threetierapp.firewall
