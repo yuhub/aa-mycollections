@@ -32,33 +32,4 @@
       loop: "{{ instances }}"
       async: 7200
       poll: 0
-  
-    - name: Wait for instance(s) creation to complete
-      vars:
-        ansible_async_dir: "{{ lookup('env','HOME') }}/.ansible_async/"
-      async_status:
-        jid: "{{ item.ansible_job_id }}"
-      register: os_jobs
-      until: os_jobs.finished
-      retries: 300
-      loop: "{{ servers.results | flatten(levels=1) }}"
-
-    - name: Populate instance inventory
-      add_host:
-        host: "{{ item.openstack.name }}"
-        group: "osp_servers"
-        ansible_host: "{{ item.openstack.private_v4 }}"
-        ansible_user: cloud-user
-        ansible_ssh_private_key_file: "/home/runner/.ssh/{{ guid }}key.pem"
-      loop: "{{ os_jobs.results | flatten(levels=1) }}"
-      when: servers.changed | bool
-
-- name: Check new servers
-  hosts: osp_servers
-  gather_facts: false
-  tasks:
-    - name: wait for host to be available
-      wait_for_connection:
-        delay: 10
-        timeout: 300
-        connect_timeout: 10
+ 
