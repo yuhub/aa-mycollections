@@ -4,12 +4,12 @@
   connection: local
   gather_facts: false
   vars:
-    guid: 3527
+    guid: "{{ lookup('env','GUID') }}"
   tasks:
     - name: Include Instance variables
       include_vars: instances_vars.yml
 
-    - name: Create Instance....
+    - name: Create Instance
       openstack.cloud.server:
         cloud: "{{ guid }}-project"
         name: "{{ instance.name }}"
@@ -24,7 +24,7 @@
         meta: "AnsibleGroup={{instance.metadata.AnsibleGroup}},deployment_name={{instance.metadata.deployment_name}}"
         userdata: |
           #!/bin/bash
-          echo "nameserver 192.168.50.158" > /etc/resolv.conf 
+          echo "nameserver 192.168.50.158" > /etc/resolv.conf
         state: present
       loop: "{{ instances }}"
       loop_control:
