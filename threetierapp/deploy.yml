@@ -1,0 +1,39 @@
+---
+- name: Deploy database
+  hosts: database_servers
+  roles:
+    - name: Install and configure firewall
+      role: threetierapp.firewall
+      vars:
+        firewall_services:
+          - mysql
+    - name: database deployment
+      role: threetierapp.mysqldb
+
+
+- name: Deploy haproxy
+  hosts: loadbalancers
+  roles:
+    - name: Install and configure firewall
+      role: aa-mycollections.threetierapp.firewall
+      vars:
+        firewall_services:
+          - http
+        firewall_tcp_ports:
+          - 5000
+    - name: frontend deployment
+      role: aa-mycollections.threetierapp.haproxy
+
+
+- name: Deploy apache
+  hosts: backend_servers
+  roles:
+    - name: Install and configure firewall
+      role: aa-mycollections.threetierapp.firewall
+      vars:
+        firewall_services:
+          - http
+        firewall_tcp_ports:
+          - 8080
+    - name: application deployment
+      role: aa-mycollections.threetierapp.apache
