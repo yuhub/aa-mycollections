@@ -9,6 +9,7 @@ instances:
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
+      type: osp_instances
 
   - name: app2
     keypair: "{{ guid }}-keypair"
@@ -19,7 +20,7 @@ instances:
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
-
+      type: osp_instances
 
   - name: frontend
     keypair: "{{ guid }}-keypair"
@@ -30,6 +31,7 @@ instances:
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
+      type: osp_instances
 
   - name: appdb
     keypair: "{{ guid }}-keypair"
@@ -40,3 +42,4 @@ instances:
     metadata:
       AnsibleGroup: osp_instances
       deployment_name: dev
+      type: osp_instances
