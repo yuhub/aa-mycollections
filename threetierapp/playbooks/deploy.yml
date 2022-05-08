@@ -3,19 +3,19 @@
   hosts: database_servers
   roles:
     - name: Install and configure firewall
-      role: threetierapp.firewall
+      role: firewall
       vars:
         firewall_services:
           - mysql
     - name: database deployment
-      role: threetierapp.mysqldb
+      role: mysqldb
 
 
 - name: Deploy haproxy
   hosts: loadbalancers
   roles:
     - name: Install and configure firewall
-      role: aa-mycollections.threetierapp.firewall
+      role: firewall
       vars:
         firewall_services:
           - http
@@ -29,11 +29,11 @@
   hosts: backend_servers
   roles:
     - name: Install and configure firewall
-      role: aa-mycollections.threetierapp.firewall
+      role: firewall
       vars:
         firewall_services:
           - http
         firewall_tcp_ports:
           - 8080
     - name: application deployment
-      role: aa-mycollections.threetierapp.apache
+      role: apache
