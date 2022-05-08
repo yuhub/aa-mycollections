@@ -1,2 +1,2 @@
 ---
-- import_playbook: aa-mycollections.threetierapp.deploy
+- import_playbook: mycollections.threetierapp.deploy
