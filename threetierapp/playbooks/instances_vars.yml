@@ -1,43 +1,42 @@
 ---
 instances:
   - name: app1
+    keypair: "{{ guid }}-keypair"
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
-    internal_network: "3527-default-network"
-    security_group: "3527-HostSG"
-    keypair: "3527-keypair"
+    security_group: "{{ guid }}-HostSG"
+    internal_network: "{{ guid }}-default-network"
     metadata:
-      AnsibleGroup: deployment_name
+      AnsibleGroup: osp_instances
       deployment_name: dev
-      type: osp_instances 
+
   - name: app2
+    keypair: "{{ guid }}-keypair"
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
-    internal_network: "3527-default-network"
-    security_group: "3527-HostSG"
-    keypair: "3527-keypair"
+    security_group: "{{ guid }}-HostSG"
+    internal_network: "{{ guid }}-default-network"
     metadata:
-      AnsibleGroup: deployment_name
+      AnsibleGroup: osp_instances
       deployment_name: dev
-      type: osp_instances   
-  - name: appdb
-    image: rhel-8.3
-    flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
-    internal_network: "3527-default-network"
-    security_group: "3527-HostSG"
-    keypair: "3527-keypair"
-    metadata:
-      AnsibleGroup: deployment_name
-      deployment_name: dev
-      type: osp_instances
+
+
   - name: frontend
+    keypair: "{{ guid }}-keypair"
     image: rhel-8.3
     flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
-    internal_network: "3527-default-network"
-    security_group: "3527-HostSG"
-    keypair: "3527-keypair"
+    security_group: "{{ guid }}-HostSG"
+    internal_network: "{{ guid }}-default-network"
     metadata:
-      AnsibleGroup: deployment_name
+      AnsibleGroup: osp_instances
       deployment_name: dev
-      type: osp_instances
-  
+
+  - name: appdb
+    keypair: "{{ guid }}-keypair"
+    image: rhel-8.3
+    flavor: GLOBAL-CPU_4_Memory_8192_Disk_30_flavor
+    security_group: "{{ guid }}-HostSG"
+    internal_network: "{{ guid }}-default-network"
+    metadata:
+      AnsibleGroup: osp_instances
+      deployment_name: dev
