@@ -1,5 +1,2 @@
 ---
-- import_playbook: provision.yml
-- import_playbook: in_memory_inventory.yml 
-- import_playbook: config.yml
-
+- import_playbook: aa-collections.threetierapp.deploy
