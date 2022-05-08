@@ -1,7 +1,7 @@
 ---
 ansible-navigator:
   ansible:
-    playbook: main.yml 
+    playbook: main.yml
   app: run
   execution-environment:
     image: ee-osp:1.2.0
@@ -13,8 +13,8 @@ ansible-navigator:
     environment-variables:
       pass:
         - GUID
-        - HOME 
-        - INTERNAL_DOMAIN 
+        - HOME
+        - INTERNAL_DOMAIN
   mode: stdout
   logging:
     append: False
