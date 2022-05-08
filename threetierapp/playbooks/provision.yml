@@ -24,6 +24,9 @@
         meta:
           AnsibleGroup: "{{ item.metadata.AnsibleGroup }}"
           type: "{{ item.metadata.type }}"
+        userdata: |
+          #!/bin/bash
+          echo "nameserver 192.168.50.158" > /etc/resolv.conf
         state: present
       register: servers
       loop: "{{ instances }}"
