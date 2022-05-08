@@ -22,7 +22,7 @@
         nics:
           - net-name: "{{ item.internal_network }}"
         meta:
-          AnsibleGroup: "{{ item.metadata.AnsibleGroup }}"
+          AnsibleGroup: "AnsibleGroup={{item.metadata.AnsibleGroup}},deployment_name={{item.metadata.deployment_name}}"
           type: "{{ item.metadata.type }}"
         userdata: |
           #!/bin/bash
