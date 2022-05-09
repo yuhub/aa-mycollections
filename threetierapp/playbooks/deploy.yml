@@ -12,7 +12,7 @@
 
 
 - name: Deploy haproxy
-  hosts: 192.168.50.25
+  hosts: frontend.example.com
   roles:
     - name: Install and configure firewall
       role: firewall
@@ -26,7 +26,7 @@
 
 
 - name: Deploy apache
-  hosts: 192.168.50.182,192.168.50.141
+  hosts: app1.example.com,app2.example.com
   roles:
     - name: Install and configure firewall
       role: firewall
