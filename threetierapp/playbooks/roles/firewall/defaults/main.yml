@@ -1,16 +1,16 @@
 ---
 # defaults file for roles/firewall
-services_list:
-  - http
-  - mysql
-
-firewall_tcp_ports :
-  - 3306
-  - 8080
-  - 443
-
-firewall_udp_ports:
-  - 3306
-  - 8080
-  - 443
+#services_list:
+#  - http
+#  - mysql
+#
+#firewall_tcp_ports :
+#  - 3306
+#  - 8080
+#  - 443
+#
+#firewall_udp_ports:
+#  - 3306
+#  - 8080
+#  - 443
 
