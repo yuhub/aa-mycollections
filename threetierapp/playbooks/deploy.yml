@@ -22,7 +22,7 @@
         firewall_tcp_ports:
           - 5000
     - name: frontend deployment
-      role: aa-mycollections.threetierapp.haproxy
+      role: haproxy
 
 
 - name: Deploy apache
