@@ -1,6 +1,6 @@
 ---
 - name: Deploy database
-  hosts: 192.168.50.75
+  hosts: appdb.example.com
   roles:
     - name: Install and configure firewall
       role: firewall
