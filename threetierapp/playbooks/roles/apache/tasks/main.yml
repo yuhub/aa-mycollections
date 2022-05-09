@@ -20,12 +20,12 @@
     src: images
     dest: /var/www/html/
 
-- name: Copy php program template
-  template:
-    src: index.php.j2
-    dest: /var/www/html/index.php
-  notify:
-    - restart_apache
+#- name: Copy php program template
+#  template:
+#    src: index.php.j2
+#    dest: /var/www/html/index.php
+#  notify:
+#    - restart_apache
 
 
 - name: Start apache server
