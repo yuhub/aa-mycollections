@@ -14,7 +14,7 @@
 
 
 - name: Deploy haproxy
-  hosts: frontend.example.com
+  hosts: frontend.example.com ansible_host=192.168.50.25
   become_user: root
   become: yes
   roles:
