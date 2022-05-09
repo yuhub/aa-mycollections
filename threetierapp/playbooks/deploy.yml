@@ -1,6 +1,7 @@
 ---
 - name: Deploy database
   hosts: appdb.example.com
+  become_user: root
   roles:
     - name: Install and configure firewall
       role: firewall
