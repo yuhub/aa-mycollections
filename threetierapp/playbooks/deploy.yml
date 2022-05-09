@@ -1,6 +1,6 @@
 ---
 - name: Deploy database
-  hosts: database_servers
+  hosts: 192.168.50.75
   roles:
     - name: Install and configure firewall
       role: firewall
