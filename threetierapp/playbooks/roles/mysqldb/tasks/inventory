@@ -1,0 +1,50 @@
+[all]
+
+hub.example.com ansible_host=192.168.50.215
+
+db.example.com ansible_host=192.168.50.47
+
+ac.example.com ansible_host=192.168.50.57
+
+exec.example.com ansible_host=192.168.50.246
+
+bastion.example.com ansible_host=192.168.50.158
+
+satellite.example.com ansible_host=192.168.50.238
+[ungrouped]
+[hubs]
+
+hub.example.com ansible_host=192.168.50.215
+[dbs]
+
+db.example.com ansible_host=192.168.50.47
+[acs]
+
+ac.example.com ansible_host=192.168.50.57
+[execs]
+
+exec.example.com ansible_host=192.168.50.246
+[bastions]
+
+bastion.example.com ansible_host=192.168.50.158
+[controls]
+
+bastion.example.com ansible_host=192.168.50.158
+[satellites]
+
+satellite.example.com ansible_host=192.168.50.238
+
+[database_servers]
+
+#appdb.example.com ansible_host=192.168.50.75
+192.168.50.75
+[loadbalancers]
+
+#frontend.example.com ansible_host=192.168.50.25
+192.168.50.25
+[backend_servers]
+
+#app1.example.com ansible_host=192.168.50.182
+#app2.example.com ansible_host=192.168.50.141
+192.168.50.141
+192.168.50.182
