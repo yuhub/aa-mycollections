@@ -15,6 +15,8 @@
 
 - name: Deploy haproxy
   hosts: frontend.example.com
+  become_user: root
+  become: yes
   roles:
     - name: Install and configure firewall
       role: firewall
@@ -29,6 +31,8 @@
 
 - name: Deploy apache
   hosts: app1.example.com,app2.example.com
+  become_user: root
+  become: yes
   roles:
     - name: Install and configure firewall
       role: firewall
